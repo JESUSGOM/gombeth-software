@@ -16,62 +16,61 @@ body{
 }
 
 header{
+    min-height:100vh;
     background:linear-gradient(135deg,#020617,#0f172a,#1e3a8a);
     color:white;
-    padding:35px 8%;
-}
-
-nav{
     display:flex;
-    justify-content:space-between;
     align-items:center;
-    margin-bottom:70px;
-}
-
-nav img{
-    width:260px;
-    max-width:60%;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    margin-left:25px;
-    font-weight:bold;
+    justify-content:center;
+    text-align:center;
+    padding:40px 20px;
 }
 
 .hero{
-    display:grid;
-    grid-template-columns:1.2fr 1fr;
-    gap:50px;
-    align-items:center;
-    padding-bottom:80px;
+    max-width:950px;
+}
+
+.logo-icon{
+    width:180px;
+    height:180px;
+    object-fit:contain;
+    margin-bottom:30px;
+    filter:drop-shadow(0 20px 35px rgba(0,0,0,0.45));
 }
 
 .hero h1{
-    font-size:54px;
+    font-size:58px;
     line-height:1.1;
-    margin-bottom:25px;
+    margin-bottom:20px;
+    font-weight:800;
+}
+
+.hero h2{
+    font-size:30px;
+    color:#93c5fd;
+    margin-bottom:20px;
+    font-weight:600;
 }
 
 .hero p{
-    font-size:22px;
+    font-size:21px;
     color:#dbeafe;
-    margin-bottom:30px;
+    max-width:780px;
+    margin:0 auto 35px auto;
 }
 
-.hero-logo{
-    background:rgba(255,255,255,0.08);
-    border:1px solid rgba(255,255,255,0.15);
-    border-radius:24px;
-    padding:45px;
-    text-align:center;
-    box-shadow:0 20px 60px rgba(0,0,0,0.35);
+.badges{
+    margin-bottom:35px;
 }
 
-.hero-logo img{
-    width:100%;
-    max-width:520px;
+.badges span{
+    display:inline-block;
+    background:rgba(255,255,255,0.12);
+    border:1px solid rgba(255,255,255,0.22);
+    padding:8px 14px;
+    border-radius:999px;
+    margin:5px;
+    font-size:14px;
 }
 
 .btn{
@@ -82,7 +81,13 @@ nav a{
     border-radius:10px;
     text-decoration:none;
     font-weight:bold;
-    margin-right:12px;
+    margin:8px;
+    transition:0.2s;
+}
+
+.btn:hover{
+    background:#2563eb;
+    transform:translateY(-2px);
 }
 
 .btn.secondary{
@@ -93,18 +98,23 @@ nav a{
 section{
     max-width:1200px;
     margin:auto;
-    padding:70px 25px;
+    padding:75px 25px;
 }
 
 .section-title{
     text-align:center;
-    margin-bottom:40px;
+    margin-bottom:45px;
 }
 
 .section-title h2{
     color:#1e3a8a;
-    font-size:36px;
+    font-size:38px;
     margin-bottom:10px;
+}
+
+.section-title p{
+    font-size:18px;
+    color:#4b5563;
 }
 
 .grid{
@@ -115,43 +125,97 @@ section{
 
 .card{
     background:white;
-    padding:30px;
+    padding:32px;
     border-radius:18px;
     box-shadow:0 10px 25px rgba(15,23,42,0.08);
+    border:1px solid #e5e7eb;
 }
 
 .card h3{
     color:#1e3a8a;
     margin-bottom:12px;
+    font-size:21px;
+}
+
+.card p{
+    color:#4b5563;
+}
+
+.product-wrapper{
+    background:#0f172a;
+    max-width:none;
+    padding:80px 25px;
 }
 
 .product{
-    background:#0f172a;
+    max-width:1200px;
+    margin:auto;
     color:white;
-    border-radius:24px;
-    padding:50px;
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:40px;
+    gap:45px;
     align-items:center;
 }
 
+.product-box{
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:24px;
+    padding:45px;
+}
+
 .product h2{
-    font-size:38px;
-    margin-bottom:15px;
+    font-size:40px;
+    margin-bottom:18px;
+}
+
+.product p{
+    color:#dbeafe;
+    font-size:18px;
 }
 
 .product ul{
-    margin-top:20px;
-    padding-left:20px;
+    margin-top:22px;
+    padding-left:22px;
+}
+
+.product li{
+    margin-bottom:10px;
+    color:#e0f2fe;
+}
+
+.use-cases{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:18px;
+    text-align:center;
+}
+
+.use-case{
+    background:white;
+    padding:28px 15px;
+    border-radius:16px;
+    box-shadow:0 10px 25px rgba(15,23,42,0.08);
+    font-weight:bold;
+    color:#1e3a8a;
 }
 
 .contact{
     text-align:center;
     background:white;
     border-radius:24px;
-    padding:50px;
+    padding:55px 30px;
     box-shadow:0 10px 25px rgba(15,23,42,0.08);
+}
+
+.contact h2{
+    color:#1e3a8a;
+    font-size:36px;
+    margin-bottom:15px;
+}
+
+.contact p{
+    margin-bottom:10px;
 }
 
 .contact a{
@@ -163,28 +227,36 @@ footer{
     background:#020617;
     color:#cbd5e1;
     text-align:center;
-    padding:25px;
+    padding:28px;
 }
 
 @media(max-width:900px){
-    .hero,
-    .product,
-    .grid{
-        grid-template-columns:1fr;
+    header{
+        min-height:auto;
+        padding:80px 20px;
     }
 
     .hero h1{
-        font-size:38px;
+        font-size:40px;
     }
 
-    nav{
-        display:block;
-        text-align:center;
+    .hero h2{
+        font-size:24px;
     }
 
-    nav a{
-        display:inline-block;
-        margin:15px 8px 0;
+    .hero p{
+        font-size:18px;
+    }
+
+    .grid,
+    .product,
+    .use-cases{
+        grid-template-columns:1fr;
+    }
+
+    .logo-icon{
+        width:140px;
+        height:140px;
     }
 }
 </style>
@@ -193,125 +265,154 @@ footer{
 <body>
 
 <header>
+    <div class="hero">
 
-<nav>
-    <img src="logo-gombeth.png" alt="Gombeth Software Solutions">
-    <div>
-        <a href="#servicios">Servicios</a>
-        <a href="#gombeth-urban">Gombeth Urban</a>
-        <a href="#contacto">Contacto</a>
-    </div>
-</nav>
+        <img class="logo-icon" src="logo-gombeth.png" alt="Gombeth Software Solutions">
 
-<div class="hero">
+        <h1>Gombeth Software Solutions</h1>
 
-    <div>
-        <h1>Software a medida para impulsar tu negocio</h1>
+        <h2>Software a medida para impulsar tu negocio</h2>
+
         <p>
             Desarrollamos aplicaciones empresariales, automatización de procesos
             y soluciones digitales con Java, Spring Boot, Angular y tecnologías web.
         </p>
 
+        <div class="badges">
+            <span>Java</span>
+            <span>Spring Boot</span>
+            <span>Angular</span>
+            <span>Microservicios</span>
+            <span>Automatización</span>
+            <span>Soluciones empresariales</span>
+        </div>
+
         <a class="btn" href="mailto:jfgb@jfgb.es">Solicitar información</a>
         <a class="btn secondary" href="#gombeth-urban">Ver Gombeth Urban</a>
+
     </div>
-
-    <div class="hero-logo">
-        <img src="logo-gombeth.png" alt="Gombeth Software Solutions">
-    </div>
-
-</div>
-
 </header>
 
 <section id="servicios">
 
-<div class="section-title">
-    <h2>Servicios</h2>
-    <p>Soluciones tecnológicas orientadas a resolver problemas reales de negocio.</p>
-</div>
-
-<div class="grid">
-
-    <div class="card">
-        <h3>Aplicaciones empresariales</h3>
-        <p>Desarrollo de aplicaciones web y de escritorio adaptadas a las necesidades de cada empresa.</p>
+    <div class="section-title">
+        <h2>Servicios</h2>
+        <p>Soluciones tecnológicas orientadas a resolver problemas reales de negocio.</p>
     </div>
 
-    <div class="card">
-        <h3>Java y Spring Boot</h3>
-        <p>Backend robusto, seguro y preparado para crecer con arquitecturas modernas.</p>
-    </div>
+    <div class="grid">
 
-    <div class="card">
-        <h3>Angular</h3>
-        <p>Interfaces web profesionales, rápidas y preparadas para trabajar con APIs empresariales.</p>
-    </div>
+        <div class="card">
+            <h3>Aplicaciones empresariales</h3>
+            <p>Desarrollo de aplicaciones web y de escritorio adaptadas a las necesidades de cada empresa.</p>
+        </div>
 
-    <div class="card">
-        <h3>Microservicios</h3>
-        <p>Diseño de sistemas escalables mediante servicios independientes e integrados.</p>
-    </div>
+        <div class="card">
+            <h3>Java y Spring Boot</h3>
+            <p>Backend robusto, seguro y preparado para crecer con arquitecturas modernas.</p>
+        </div>
 
-    <div class="card">
-        <h3>Automatización</h3>
-        <p>Digitalización de procesos repetitivos para ahorrar tiempo y reducir errores.</p>
-    </div>
+        <div class="card">
+            <h3>Angular</h3>
+            <p>Interfaces web profesionales, rápidas y preparadas para trabajar con APIs empresariales.</p>
+        </div>
 
-    <div class="card">
-        <h3>Mantenimiento evolutivo</h3>
-        <p>Mejora, modernización y ampliación de aplicaciones ya existentes.</p>
-    </div>
+        <div class="card">
+            <h3>Microservicios</h3>
+            <p>Diseño de sistemas escalables mediante servicios independientes e integrados.</p>
+        </div>
 
-</div>
+        <div class="card">
+            <h3>Automatización</h3>
+            <p>Digitalización de procesos repetitivos para ahorrar tiempo y reducir errores.</p>
+        </div>
+
+        <div class="card">
+            <h3>Mantenimiento evolutivo</h3>
+            <p>Mejora, modernización y ampliación de aplicaciones ya existentes.</p>
+        </div>
+
+    </div>
 
 </section>
 
-<section id="gombeth-urban">
+<section class="product-wrapper" id="gombeth-urban">
 
-<div class="product">
+    <div class="product">
 
-    <div>
-        <h2>Gombeth Urban</h2>
-        <p>
-            Plataforma de gestión para Administradores de Fincas, diseñada para centralizar
-            comunidades, propietarios, remesas SEPA, contabilidad, informes PDF y documentación.
-        </p>
+        <div class="product-box">
+            <h2>Gombeth Urban</h2>
 
-        <ul>
-            <li>Gestión de comunidades y propietarios</li>
-            <li>Generación de remesas SEPA</li>
-            <li>Informes PDF y gestión documental</li>
-            <li>Contabilidad y automatización administrativa</li>
-            <li>Comunicación con propietarios</li>
-        </ul>
+            <p>
+                Plataforma de gestión para Administradores de Fincas, diseñada para centralizar
+                comunidades, propietarios, remesas SEPA, contabilidad, informes PDF y documentación.
+            </p>
+
+            <ul>
+                <li>Gestión de comunidades y propietarios</li>
+                <li>Generación de remesas SEPA</li>
+                <li>Informes PDF y gestión documental</li>
+                <li>Contabilidad y automatización administrativa</li>
+                <li>Comunicación con propietarios</li>
+            </ul>
+        </div>
+
+        <div class="product-box">
+            <h2>Una solución real para un sector real</h2>
+
+            <p>
+                Gombeth Urban nace para resolver problemas concretos de gestión diaria,
+                reduciendo trabajo manual y mejorando el control administrativo.
+            </p>
+
+            <br>
+
+            <a class="btn" href="mailto:jfgb@jfgb.es">Solicitar demostración</a>
+        </div>
+
     </div>
 
-    <div>
-        <h2>Una solución real para un sector real</h2>
-        <p>
-            Gombeth Urban nace para resolver problemas concretos de gestión diaria,
-            reduciendo trabajo manual y mejorando el control administrativo.
-        </p>
+</section>
+
+<section>
+
+    <div class="section-title">
+        <h2>Casos de uso</h2>
+        <p>Software adaptable a distintos sectores y necesidades empresariales.</p>
     </div>
 
-</div>
+    <div class="use-cases">
+        <div class="use-case">Administradores de fincas</div>
+        <div class="use-case">Empresas</div>
+        <div class="use-case">Comercios</div>
+        <div class="use-case">Gestión documental</div>
+        <div class="use-case">Procesos internos</div>
+    </div>
 
 </section>
 
 <section id="contacto">
 
-<div class="contact">
-    <h2>Hablemos de tu proyecto</h2>
-    <p>
-        Cuéntanos qué necesitas desarrollar, automatizar o mejorar.
-    </p>
-    <br>
-    <p><strong>Email:</strong> <a href="mailto:jfgb@jfgb.es">jfgb@jfgb.es</a></p>
-    <p><strong>GitHub:</strong> <a href="https://github.com/JESUSGOM">github.com/JESUSGOM</a></p>
-    <br>
-    <a class="btn" href="mailto:jfgb@jfgb.es">Contactar ahora</a>
-</div>
+    <div class="contact">
+        <h2>Hablemos de tu proyecto</h2>
+
+        <p>
+            Cuéntanos qué necesitas desarrollar, automatizar o mejorar.
+        </p>
+
+        <br>
+
+        <p><strong>Email:</strong> <a href="mailto:jfgb@jfgb.es">jfgb@jfgb.es</a></p>
+
+        <p>
+            <strong>GitHub:</strong>
+            <a href="https://github.com/JESUSGOM">github.com/JESUSGOM</a>
+        </p>
+
+        <br>
+
+        <a class="btn" href="mailto:jfgb@jfgb.es">Contactar ahora</a>
+    </div>
 
 </section>
 
