@@ -3,184 +3,320 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Gombeth Software Solutions</title>
 
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box}
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#f5f7fa;
-    color:#333;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f4f7fb;
+    color:#1f2937;
+    line-height:1.6;
+}
+
+header{
+    background:linear-gradient(135deg,#020617,#0f172a,#1e3a8a);
+    color:white;
+    padding:35px 8%;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:70px;
+}
+
+nav img{
+    width:260px;
+    max-width:60%;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    font-weight:bold;
 }
 
 .hero{
-    background:linear-gradient(135deg,#0f172a,#1e3a8a);
-    color:white;
-    text-align:center;
-    padding:120px 20px;
-}
-
-.hero img{
-    width:700px;
-    max-width:95%;
-    display:block;
-    margin:0 auto 30px auto;
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:50px;
+    align-items:center;
+    padding-bottom:80px;
 }
 
 .hero h1{
-    font-size:48px;
-    margin-bottom:15px;
+    font-size:54px;
+    line-height:1.1;
+    margin-bottom:25px;
 }
 
 .hero p{
     font-size:22px;
-    margin-bottom:25px;
+    color:#dbeafe;
+    margin-bottom:30px;
+}
+
+.hero-logo{
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:24px;
+    padding:45px;
+    text-align:center;
+    box-shadow:0 20px 60px rgba(0,0,0,0.35);
+}
+
+.hero-logo img{
+    width:100%;
+    max-width:520px;
 }
 
 .btn{
     display:inline-block;
     background:#3b82f6;
     color:white;
-    padding:14px 28px;
-    border-radius:8px;
+    padding:15px 30px;
+    border-radius:10px;
     text-decoration:none;
     font-weight:bold;
+    margin-right:12px;
 }
 
-.container{
-    width:90%;
-    max-width:1400px;
+.btn.secondary{
+    background:transparent;
+    border:1px solid #93c5fd;
+}
+
+section{
+    max-width:1200px;
     margin:auto;
-    padding:60px 20px;
+    padding:70px 25px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.section-title h2{
+    color:#1e3a8a;
+    font-size:36px;
+    margin-bottom:10px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
 }
 
 .card{
     background:white;
-    border-radius:12px;
     padding:30px;
-    margin-bottom:25px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(15,23,42,0.08);
 }
 
-h2{
+.card h3{
     color:#1e3a8a;
-    margin-bottom:20px;
+    margin-bottom:12px;
 }
 
-ul{
+.product{
+    background:#0f172a;
+    color:white;
+    border-radius:24px;
+    padding:50px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+.product h2{
+    font-size:38px;
+    margin-bottom:15px;
+}
+
+.product ul{
+    margin-top:20px;
     padding-left:20px;
 }
 
-li{
-    margin-bottom:10px;
+.contact{
+    text-align:center;
+    background:white;
+    border-radius:24px;
+    padding:50px;
+    box-shadow:0 10px 25px rgba(15,23,42,0.08);
+}
+
+.contact a{
+    color:#1d4ed8;
+    font-weight:bold;
 }
 
 footer{
-    background:#0f172a;
-    color:white;
+    background:#020617;
+    color:#cbd5e1;
     text-align:center;
     padding:25px;
 }
 
-</style>
+@media(max-width:900px){
+    .hero,
+    .product,
+    .grid{
+        grid-template-columns:1fr;
+    }
 
+    .hero h1{
+        font-size:38px;
+    }
+
+    nav{
+        display:block;
+        text-align:center;
+    }
+
+    nav a{
+        display:inline-block;
+        margin:15px 8px 0;
+    }
+}
+</style>
 </head>
 
 <body>
 
-<section class="hero">
+<header>
 
-<img src="logo-gombeth.png" alt="Gombeth Software">
+<nav>
+    <img src="logo-gombeth.png" alt="Gombeth Software Solutions">
+    <div>
+        <a href="#servicios">Servicios</a>
+        <a href="#gombeth-urban">Gombeth Urban</a>
+        <a href="#contacto">Contacto</a>
+    </div>
+</nav>
 
-<h1>Gombeth Software Solutions</h1>
+<div class="hero">
 
-<p>
-Especialistas en Java, Spring Boot, Angular y soluciones empresariales a medida.
-</p>
+    <div>
+        <h1>Software a medida para impulsar tu negocio</h1>
+        <p>
+            Desarrollamos aplicaciones empresariales, automatización de procesos
+            y soluciones digitales con Java, Spring Boot, Angular y tecnologías web.
+        </p>
 
-<a class="btn" href="mailto:jfgb@jfgb.es">
-Solicitar información
-</a>
+        <a class="btn" href="mailto:jfgb@jfgb.es">Solicitar información</a>
+        <a class="btn secondary" href="#gombeth-urban">Ver Gombeth Urban</a>
+    </div>
+
+    <div class="hero-logo">
+        <img src="logo-gombeth.png" alt="Gombeth Software Solutions">
+    </div>
+
+</div>
+
+</header>
+
+<section id="servicios">
+
+<div class="section-title">
+    <h2>Servicios</h2>
+    <p>Soluciones tecnológicas orientadas a resolver problemas reales de negocio.</p>
+</div>
+
+<div class="grid">
+
+    <div class="card">
+        <h3>Aplicaciones empresariales</h3>
+        <p>Desarrollo de aplicaciones web y de escritorio adaptadas a las necesidades de cada empresa.</p>
+    </div>
+
+    <div class="card">
+        <h3>Java y Spring Boot</h3>
+        <p>Backend robusto, seguro y preparado para crecer con arquitecturas modernas.</p>
+    </div>
+
+    <div class="card">
+        <h3>Angular</h3>
+        <p>Interfaces web profesionales, rápidas y preparadas para trabajar con APIs empresariales.</p>
+    </div>
+
+    <div class="card">
+        <h3>Microservicios</h3>
+        <p>Diseño de sistemas escalables mediante servicios independientes e integrados.</p>
+    </div>
+
+    <div class="card">
+        <h3>Automatización</h3>
+        <p>Digitalización de procesos repetitivos para ahorrar tiempo y reducir errores.</p>
+    </div>
+
+    <div class="card">
+        <h3>Mantenimiento evolutivo</h3>
+        <p>Mejora, modernización y ampliación de aplicaciones ya existentes.</p>
+    </div>
+
+</div>
 
 </section>
 
-<div class="container">
+<section id="gombeth-urban">
 
-<div class="card">
+<div class="product">
 
-<h2>Quiénes somos</h2>
+    <div>
+        <h2>Gombeth Urban</h2>
+        <p>
+            Plataforma de gestión para Administradores de Fincas, diseñada para centralizar
+            comunidades, propietarios, remesas SEPA, contabilidad, informes PDF y documentación.
+        </p>
 
-<p>
-Desarrollamos aplicaciones empresariales y soluciones de software a medida
-utilizando tecnologías modernas como Java, Spring Boot, Angular, PHP,
-MySQL y MariaDB.
-</p>
+        <ul>
+            <li>Gestión de comunidades y propietarios</li>
+            <li>Generación de remesas SEPA</li>
+            <li>Informes PDF y gestión documental</li>
+            <li>Contabilidad y automatización administrativa</li>
+            <li>Comunicación con propietarios</li>
+        </ul>
+    </div>
 
-</div>
-
-<div class="card">
-
-<h2>Servicios</h2>
-
-<ul>
-<li>Aplicaciones Web Empresariales</li>
-<li>Java y Spring Boot</li>
-<li>Arquitecturas de Microservicios</li>
-<li>Angular</li>
-<li>Automatización de procesos</li>
-<li>Integración de sistemas</li>
-<li>Mantenimiento evolutivo de aplicaciones</li>
-</ul>
-
-</div>
-
-<div class="card">
-
-<h2>Producto Destacado</h2>
-
-<h3>Gombeth Urban</h3>
-
-<p>
-Plataforma de gestión para Administradores de Fincas:
-comunidades, propietarios, remesas SEPA,
-contabilidad, informes PDF y gestión documental.
-</p>
+    <div>
+        <h2>Una solución real para un sector real</h2>
+        <p>
+            Gombeth Urban nace para resolver problemas concretos de gestión diaria,
+            reduciendo trabajo manual y mejorando el control administrativo.
+        </p>
+    </div>
 
 </div>
 
-<div class="card">
+</section>
 
-<h2>Contacto</h2>
+<section id="contacto">
 
-<p><strong>Email:</strong> jfgb@jfgb.es</p>
-
-<p>
-<strong>GitHub:</strong>
-<a href="https://github.com/JESUSGOM">
-github.com/JESUSGOM
-</a>
-</p>
-
+<div class="contact">
+    <h2>Hablemos de tu proyecto</h2>
+    <p>
+        Cuéntanos qué necesitas desarrollar, automatizar o mejorar.
+    </p>
+    <br>
+    <p><strong>Email:</strong> <a href="mailto:jfgb@jfgb.es">jfgb@jfgb.es</a></p>
+    <p><strong>GitHub:</strong> <a href="https://github.com/JESUSGOM">github.com/JESUSGOM</a></p>
+    <br>
+    <a class="btn" href="mailto:jfgb@jfgb.es">Contactar ahora</a>
 </div>
 
-</div>
+</section>
 
 <footer>
-
-© 2026 Gombeth Software Solutions
-
-</footer>
-
-</body>
-</html>
-© 2026 Gombeth Software's
+    © 2026 Gombeth Software Solutions · Desarrollo de software a medida
 </footer>
 
 </body>
